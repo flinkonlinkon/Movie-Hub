@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function Card({datay}) {
     let {handaleClick} = useContext(Apicon)
-    const {movieTitle,moviePoster,duration,year,rating,summary,genre} = datay || {};
+    const {movietitle,movieposter,duration,year,rating,summary,genre} = datay || {};
+    console.log(datay);
+    
 
     
     
@@ -20,28 +22,30 @@ export default function Card({datay}) {
       <div className="card bg-base-100 w-96 shadow-xl">
   <figure className="px-10 pt-10">
     <img
-      src={moviePoster}
-      alt={movieTitle}
+      src={movieposter}
+      alt={movietitle}
       className="rounded-xl w-80 h-40 object-cover" />
   </figure>
   <div className="card-body">
     <div className='flex justify-between shadow-md p-2'>
     <div>
 
-    <h2 className="card-title font-bold">{movieTitle}</h2>
+    <h2 className="card-title font-bold">{movietitle}</h2>
     </div>
 
     <div>
+      Genre:
+
     {
-        genre?.map(x => <p className='font-semibold'>{x}</p>)
+        genre
     }
     </div>
     </div>
     <div className='font-bold'>
 
       <div>Duration:{duration}</div>
-      <div className='relative left-[-42px]'>Rating:{rating}</div>
-      <div className='relative left-[-42px]'>Year:{year}</div>
+      <div>Rating:{rating}</div>
+      <div>Year:{year}</div>
 
 
 

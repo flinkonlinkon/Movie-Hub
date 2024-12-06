@@ -8,6 +8,8 @@ const auth = getAuth(app)
 
 
 export default function ContextPro({children}) {
+
+    let [server,SetServer] = useState([])
   
 
     let [api,setApi] = useState([])
@@ -17,9 +19,24 @@ export default function ContextPro({children}) {
     let [loading,setLoading] = useState(true)
 
     useEffect(()=>{
+        async function serverApi(){
+            let url = await fetch('http://localhost:5000/movies')
+            let data = await url.json()
+            console.log(data);
+            
+            SetServer(data)
+           
+            
+        }
+
+        // serverApi()
+    },[])
+
+    useEffect(()=>{
 
         async function baby(){
-            let url = await fetch('./movie.json')
+            // let url = await fetch('./movie.json')
+            let url = await fetch('http://localhost:5000/movies')
             let data = await url.json()
             setApi(data)
             
@@ -30,16 +47,24 @@ export default function ContextPro({children}) {
     },[])
 
     function handaleClick(passData){
-        let oldDataAll = passData
-        // let newArr = [...arrData, passData]
-        // setArrData(newArr)
+        // let oldDataAll = passData
+        let newArr = [...arrData, passData]
+        setArrData(newArr)
         
+
         
-       setOlddata(oldDataAll)
+       
+        
+    //    setOlddata(oldDataAll)
+    //    console.log(oldData);
+       
      
        
       
     }
+
+    console.log(arrData);
+    
 
     function singUp(email,password){
 
@@ -98,6 +123,6 @@ setLoading(true)
     }
 
 
-  return <Apicon.Provider value={{api,setApi,handaleClick,arrData,setArrData,oldData,setOlddata,singUp,singIn,user,setUser,googlePopSing,singsOut,loading,updatePro,forgetPass}}> {children} </Apicon.Provider>
+  return <Apicon.Provider value={{api,setApi,handaleClick,arrData,setArrData,oldData,setOlddata,singUp,singIn,user,setUser,googlePopSing,singsOut,loading,updatePro,forgetPass,server,SetServer}}> {children} </Apicon.Provider>
   
 }

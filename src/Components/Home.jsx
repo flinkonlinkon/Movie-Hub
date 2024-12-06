@@ -5,7 +5,7 @@ import Card from './Card'
 
 export default function Home() {
   let navigate = useNavigate()
-    let {api} = useContext(Apicon)
+    let {api,server,SetServer} = useContext(Apicon)
     let newData = useLoaderData()
    
     
@@ -61,15 +61,18 @@ export default function Home() {
 
    
     
-    {/* {
-        api.map(datay => <Card datay={datay}></Card>)
-    } */}
+    
 
 {
   api
     .sort((a, b) => b.rating - a.rating)
     .map(datay => <Card key={datay.id} datay={datay}></Card>)
 }
+
+
+
+
+
 
    
 
