@@ -1,0 +1,58 @@
+[
+    {
+      "movieTitle": "Inception",
+      "moviePoster": "https://i.ibb.co.com/X4LqXKp/MV5-BMj-Ax-Mz-Y3-Njcx-NF5-BMl5-Ban-Bn-Xk-Ft-ZTcw-NTI5-OTM0-Mw-V1-FMjpg-UX1000.jpg",
+      "duration": "148 minutes",
+      "year": 2010,
+      "rating": 8.8,
+      "genre": ["Action", "Adventure", "Sci-Fi"],
+      "summary": "A skilled thief is offered a chance to erase his criminal history by planting an idea into a target's subconscious."
+    },
+    {
+      "movieTitle": "The Dark Knight",
+      "moviePoster": "https://i.ibb.co.com/Qr6HbQz/jocker.webp",
+      "duration": "152 minutes",
+      "year": 2008,
+      "rating": 9.0,
+      "genre": ["Action", "Crime", "Drama"],
+      "summary": "Batman faces his greatest psychological and physical challenge when he comes up against the Joker, a mastermind of chaos."
+    },
+    {
+      "movieTitle": "Avatar",
+      "moviePoster": "https://i.ibb.co.com/hHFJqYQ/MV5-BNm-Qx-Nj-Zl-ZTct-MWJi-MC00-NGMx-LWJj-NTct-NTFi-Nj-A1-Njk3-ZDQ5-Xk-Ey-Xk-Fqc-Gc-V1.jpg",
+      "duration": "162 minutes",
+      "year": 2009,
+      "rating": 7.8,
+      "genre": ["Action", "Adventure", "Fantasy"],
+      "summary": "A paraplegic Marine is sent to Pandora on a unique mission, but he finds himself torn between following orders and protecting an alien civilization."
+    },
+    {
+      "movieTitle": "The Shawshank Redemption",
+      "moviePoster": "https://i.ibb.co.com/Z6wGcmV/MV5-BMDAy-Y2-Fh-Yjct-NDc5-OS00-MDNl-LThi-MGUt-Y2-Ux-YWVk-NGY2-Zjlj-Xk-Ey-Xk-Fqc-Gc-V1.jpg",
+      "duration": "142 minutes",
+      "year": 1994,
+      "rating": 9.3,
+      "genre": ["Drama"],
+      "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+    },
+    {
+      "movieTitle": "Interstellar",
+      "moviePoster": "https://i.ibb.co.com/mH0y2MZ/inter.jpg",
+      "duration": "169 minutes",
+      "year": 2014,
+      "rating": 8.6,
+      "genre": ["Adventure", "Drama", "Sci-Fi"],
+      "summary": "A team of explorers travels through a wormhole in space in an attempt to ensure humanity's survival."
+    },
+    {
+      "movieTitle": "The Matrix",
+      "moviePoster": "https://i.ibb.co.com/gzTMmY9/matrix.jpg",
+      "duration": "136 minutes",
+      "year": 1999,
+      "rating": 8.7,
+      "genre": ["Action", "Sci-Fi"],
+      "summary": "A computer hacker learns about the true nature of his reality and his role in the war against its controllers."
+    }
+    
+  ]
+  
