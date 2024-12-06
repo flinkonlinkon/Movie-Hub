@@ -16,8 +16,10 @@ export default function AllMovies() {
 
    
     
-{
-    api.map(datay =>  <Card datay={datay}></Card>)
+         {
+  api
+    .sort((a, b) => b.rating - a.rating)
+    .map(datay => <Card key={datay.id} datay={datay}></Card>)
 }
 
     <Outlet></Outlet>
