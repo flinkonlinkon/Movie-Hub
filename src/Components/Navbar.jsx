@@ -50,7 +50,9 @@ export default function Navbar() {
         
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Movie Hub</a>
+    
+    <img className='w-10 h-10 hidden md:block' src="https://i.ibb.co.com/mNwYvb9/download.jpg" alt="" />
+    <a className="btn btn-ghost text-xl hidden md:block">Movie Hub</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 font-medium">
