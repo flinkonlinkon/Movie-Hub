@@ -24,9 +24,9 @@ export default function AddMovies() {
         
 
         const newMovie = {movietitle,movieposter,duration,year,rating,summary,genre}
-        console.log(newMovie);
+        // console.log(newMovie);
 
-        fetch('http://localhost:5000/movies',{
+        fetch('https://movie-server-coral.vercel.app/movies',{
           method:'POST',
           headers:{
             'content-type' : 'application/json'

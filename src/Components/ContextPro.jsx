@@ -32,9 +32,9 @@ export default function ContextPro({children}) {
     useEffect(()=>{
 
         async function serverApi(){
-            let url = await fetch('http://localhost:5000/fav')
+            let url = await fetch('https://movie-server-coral.vercel.app/fav')
             let data = await url.json()
-            console.log(data);
+            // console.log(data);
             
             SetServer(data)
            
@@ -48,7 +48,7 @@ export default function ContextPro({children}) {
 
         async function baby(){
             // let url = await fetch('./movie.json')
-            let url = await fetch('http://localhost:5000/movies')
+            let url = await fetch('https://movie-server-coral.vercel.app/movies')
             let data = await url.json()
             setApi(data)
             

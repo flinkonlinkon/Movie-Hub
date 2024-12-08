@@ -12,7 +12,7 @@ export default function Navbar() {
     // let retro = e.target.retro.value
     // let aqua = e.target.aqua.value
     
-    console.log(genre);
+    // console.log(genre);
     
 
   }

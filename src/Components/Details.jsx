@@ -8,14 +8,14 @@ import { useNavigate } from 'react-router-dom';
 export default function Details() {
     let {arrData,setArrData,handaleClick,setOlddata,oldData} = useContext(Apicon)
     const {_id,movietitle,movieposter,duration,year,rating,summary,genre} = oldData || {};
-    console.log(oldData);
+    // console.log(oldData);
     let navigate = useNavigate()
     
     function handleTost(id){
       // handaleClick()
       toast.success('Movie Added Successfully')
 
-      fetch('http://localhost:5000/fav',{
+      fetch('https://movie-server-coral.vercel.app/fav',{
         method:'POST',
         headers:{
           'content-type' : 'application/json'
@@ -35,7 +35,7 @@ export default function Details() {
         }
       })
       
-        console.log(id);
+        // console.log(id);
         
      
     }

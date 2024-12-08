@@ -10,7 +10,7 @@ export default function FavCard({x,server}) {
     function handleDelete(id){
 
      
-      console.log(id);
+      // console.log(id);
 
 
       Swal.fire({
@@ -23,7 +23,7 @@ export default function FavCard({x,server}) {
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/fav/${id}`,{
+          fetch(`https://movie-server-coral.vercel.app/fav/${id}`,{
             method:'DELETE',
           }).then(res => res.json()).then(result=>{
             if(result.deletedCount>0){

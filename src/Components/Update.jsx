@@ -7,7 +7,7 @@ export default function Update() {
     const{id}=useParams
         let data = useLoaderData()
         
-        console.log(data);
+        // console.log(data);
         let [movietitle,setMovietitle] = useState(data?.movietitle)
         let [duration,setduration] = useState(data?.duration)
         let [movieposter,setmovieposter] = useState(data?.movieposter)
@@ -30,9 +30,9 @@ export default function Update() {
         
 
         const newMovie = {movietitle,movieposter,duration,year,rating,summary,genre}
-        console.log(newMovie);
+        // console.log(newMovie);
 
-        fetch(`http://localhost:5000/update/${data._id}`,{
+        fetch(`https://movie-server-coral.vercel.app/update/${data._id}`,{
           method:'PATCH',
           headers:{
             'content-type' : 'application/json'
@@ -40,7 +40,7 @@ export default function Update() {
           body: JSON.stringify(newMovie)
         })
         .then(res => res.json())
-        .then(data => {console.log(data)
+        .then(data => {  
           if(data.matchedCount){
             Swal.fire({
               title: 'Success!',
