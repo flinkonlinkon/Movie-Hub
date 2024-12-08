@@ -18,6 +18,7 @@ import ContextPro from './Components/ContextPro.jsx';
 import AllMovies from './Components/AllMovies.jsx';
 import MyFavorites from './Components/MyFavorites.jsx';
 import AddMovies from './Components/AddMovies.jsx';
+import Update from './Components/Update.jsx';
 
 
 
@@ -86,6 +87,14 @@ const router = createBrowserRouter([
     element:<PrivateRoute>
       <MyFavorites></MyFavorites>
     </PrivateRoute>
+  },
+  {
+    path:'/update/:id',
+    element:<PrivateRoute>
+      <Update></Update>
+    </PrivateRoute>,
+    loader:({params})=> fetch(`https://movie-server-coral.vercel.app/update/${params.id}`)
+    
   }
   
 ],{

@@ -10,7 +10,7 @@ export default function Home() {
    
     
   return (
-    <>
+    <div>
     <div className='w-11/12 mx-auto rounded-lg bg-yellow-300 p-3 mt-10 mb-10'>
       <div className="carousel w-full">
   <div id="slide1" className="carousel-item relative w-full">
@@ -79,6 +79,6 @@ export default function Home() {
         <Outlet></Outlet>
     </div>
     <button onClick={()=> navigate('/allmovies')} className='btn mb-5'>See All Movies</button>
-    </>
+    </div>
   )
 }

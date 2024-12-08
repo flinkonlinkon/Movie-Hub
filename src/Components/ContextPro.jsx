@@ -17,10 +17,22 @@ export default function ContextPro({children}) {
     let [oldData,setOlddata] = useState({})
     let [user,setUser] = useState()
     let [loading,setLoading] = useState(true)
+    let [theme,setTheme] = useState('light')
+
+    function th(value){
+        if(value == 'light'){
+            setTheme('dark')
+        }else{
+            setTheme('light')
+        }
+
+    }
+    
 
     useEffect(()=>{
+
         async function serverApi(){
-            let url = await fetch('http://localhost:5000/movies')
+            let url = await fetch('https://movie-server-coral.vercel.app/fav')
             let data = await url.json()
             console.log(data);
             
@@ -29,14 +41,14 @@ export default function ContextPro({children}) {
             
         }
 
-        // serverApi()
+        serverApi()
     },[])
 
     useEffect(()=>{
 
         async function baby(){
             // let url = await fetch('./movie.json')
-            let url = await fetch('http://localhost:5000/movies')
+            let url = await fetch('https://movie-server-coral.vercel.app/movies')
             let data = await url.json()
             setApi(data)
             
@@ -46,24 +58,24 @@ export default function ContextPro({children}) {
 
     },[])
 
-    function handaleClick(passData){
-        // let oldDataAll = passData
-        let newArr = [...arrData, passData]
-        setArrData(newArr)
-        
+    const handleDelete = (id) => {
+        setArrData((prevMovies) => prevMovies.filter((movie) => movie._id !== id));
+      };
 
+    function handaleClick(passData){
+        let oldDataAll = passData
+        // let newArr = [...arrData, passData]
+        // setArrData(newArr)
         
-       
         
-    //    setOlddata(oldDataAll)
-    //    console.log(oldData);
+       setOlddata(oldDataAll)
        
      
        
       
     }
 
-    console.log(arrData);
+    // console.log(arrData);
     
 
     function singUp(email,password){
@@ -123,6 +135,6 @@ setLoading(true)
     }
 
 
-  return <Apicon.Provider value={{api,setApi,handaleClick,arrData,setArrData,oldData,setOlddata,singUp,singIn,user,setUser,googlePopSing,singsOut,loading,updatePro,forgetPass,server,SetServer}}> {children} </Apicon.Provider>
+  return <Apicon.Provider value={{api,setApi,handaleClick,arrData,setArrData,oldData,setOlddata,singUp,singIn,user,setUser,googlePopSing,singsOut,loading,updatePro,forgetPass,server,SetServer,handleDelete,th}}> {children} </Apicon.Provider>
   
 }

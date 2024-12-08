@@ -3,13 +3,25 @@ import { Link, NavLink } from 'react-router-dom'
 import { Apicon } from './ContextPro'
 
 export default function Navbar() {
-  let {user,singsOut} = useContext(Apicon)
+  let {user,singsOut,th} = useContext(Apicon)
+
+  function handleTheme(e){
+    e.preventDefault()
+    let genre = e.target.genre.value
+    // let light = e.target.light.value
+    // let retro = e.target.retro.value
+    // let aqua = e.target.aqua.value
+    
+    console.log(genre);
+    
+
+  }
 
     
         
     
   return (
-    <div className='w-11/12 mx-auto'>
+    <div  className='w-11/12 mx-auto'>
       <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -76,6 +88,8 @@ export default function Navbar() {
         
     </ul>
   </div>
+ 
+  
   <div className="navbar-end gap-x-2">
     {
       user ? (<Link onClick={()=>singsOut()} className="btn">Sing Out</Link>) : (<Link to='/login' className="btn">Log In</Link>) 

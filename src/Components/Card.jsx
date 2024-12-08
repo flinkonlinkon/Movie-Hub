@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Card({datay}) {
     let {handaleClick} = useContext(Apicon)
     const {movietitle,movieposter,duration,year,rating,summary,genre} = datay || {};
-    console.log(datay);
+  
     
 
     

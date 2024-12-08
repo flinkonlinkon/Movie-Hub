@@ -1,17 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Swal from 'sweetalert2'
 
-export default function AddMovies() {
-
-  function toastH(){
-    // toast.success('Movie Added Successfully To Your Favorite List')
-  }
-
-    
-
+export default function Update() {
     function handleMovieInput(e){
         e.preventDefault()
         let movietitle = e.target.movietitle.value
@@ -26,7 +15,7 @@ export default function AddMovies() {
         const newMovie = {movietitle,movieposter,duration,year,rating,summary,genre}
         console.log(newMovie);
 
-        fetch('https://movie-server-coral.vercel.app/movies',{
+        fetch(`https://movie-server-coral.vercel.app/update/`,{
           method:'POST',
           headers:{
             'content-type' : 'application/json'
@@ -38,7 +27,7 @@ export default function AddMovies() {
           if(data.insertedId){
             Swal.fire({
               title: 'Success!',
-              text: 'Movie Add Successfully',
+              text: 'Update Movie Successfully',
               icon: 'success',
               confirmButtonText: 'Done'
             })
@@ -83,7 +72,7 @@ export default function AddMovies() {
         
  
 
-        <input onClick={toastH} className='btn' type="submit" value="Add movie" />
+        <input onClick={toastH} className='btn' type="submit" value="Update movie" />
         <ToastContainer />
 
 

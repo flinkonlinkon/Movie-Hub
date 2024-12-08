@@ -2,16 +2,18 @@ import React, { useContext } from 'react'
 import Navbar from './Navbar'
 import { Apicon } from './ContextPro'
 import Card from './Card'
+import FavCard from './FavCard'
 
 export default function MyFavorites() {
-  let {arrData} = useContext(Apicon)
+  let {server} = useContext(Apicon)
   return (
     <div>
         <Navbar></Navbar>
-        <div>
+        <div className='grid md:grid-cols-3 gap-2 w-11/12 mx-auto'>
+          
 
         {
-  arrData.map(x => <p>hello</p>)
+  server.map(x => <FavCard x={x} server={server} ></FavCard>)
     
 }
 
