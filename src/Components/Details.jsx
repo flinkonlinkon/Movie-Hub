@@ -3,17 +3,19 @@ import { Apicon } from './ContextPro'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 export default function Details() {
     let {arrData,setArrData,handaleClick,setOlddata,oldData} = useContext(Apicon)
     const {_id,movietitle,movieposter,duration,year,rating,summary,genre} = oldData || {};
     console.log(oldData);
+    let navigate = useNavigate()
     
     function handleTost(id){
       // handaleClick()
       toast.success('Movie Added Successfully')
 
-      fetch('https://movie-server-coral.vercel.app/fav',{
+      fetch('http://localhost:5000/fav',{
         method:'POST',
         headers:{
           'content-type' : 'application/json'
@@ -66,6 +68,7 @@ export default function Details() {
         </div>
 
         <button onClick={()=>handleTost(_id)} className='btn bg-gradient-to-r from-green-400 to-blue-500'>Add to Favorite</button>
+        <button onClick={()=>navigate(`/update/${_id}`)} className='btn bg-gradient-to-r from-green-400 to-blue-500'>Update Movie Data</button>
        
         <ToastContainer />
 

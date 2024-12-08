@@ -93,7 +93,7 @@ const router = createBrowserRouter([
     element:<PrivateRoute>
       <Update></Update>
     </PrivateRoute>,
-    loader:({params})=> fetch(`https://movie-server-coral.vercel.app/update/${params.id}`)
+    loader:({params})=> fetch(`http://localhost:5000/update/${params.id}`)
     
   }
   
